@@ -67,6 +67,20 @@ body::before{
     padding: 40px 0;
 }
 
+@media screen and (max-width: 794px) {
+    .title{
+        flex-direction: column-reverse;
+    }
+    .title-text {
+        padding: 17px;
+    }
+    .subtitle {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
 .kurapika-title {
     width: 170px;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
@@ -82,23 +96,44 @@ body::before{
 
 .media {
     margin: 0 auto;
+    max-width: 1180px;
+    padding: 10px 30px; 
 }
 
-.fotos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.subtitle {
+    padding-bottom: 40px;
+}
+
+.subtitle .title {
+    padding: 0;
+}
+
+/* FOTOS */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: 35px;
+    padding-bottom: 40px;
 }
 
-.fotos img {
-    width: 100%;
-    transition: .2s linear;
+.container img, video {
+    transition: .15s linear;
     justify-self: center;
     align-self: center;
     width: 350px;
     height: 250px;
     object-fit: cover;
 }
+
+.container img:hover, video:hover{
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+/* CLASSES PARA ANIMAÇÃO NO SCROLL */
 
 .animate-on-scroll {
     opacity: 0;
@@ -114,23 +149,30 @@ body::before{
     filter: blur(0px);
 }
 
-.box:nth-child(2) {
+.box:nth-child(2), .box:nth-child(5) {
     transition-delay: 0.4s;
 }
 
-.box:nth-child(3) {
+.box:nth-child(3), .box:nth-child(6) {
     transition-delay: 0.6s;
 }
 
-.box:nth-child(5) {
-    transition-delay: 0.4s;
+@media screen and (max-width: 1119px) {
+    .box:nth-child(2), .box:nth-child(4), .box:nth-child(6) {
+        transition-delay: 0.4s;
+    }
+    .box:nth-child(3), .box:nth-child(5) {
+        transition-delay: 0.2s;
+    }
 }
 
-.box:nth-child(6) {
-    transition-delay: 0.6s;
+@media screen and (max-width: 794px){
+    .box:nth-child(n){
+        transition-delay: 0.2s;
+    }
 }
 
-.fotos img:hover{
-    transform: scale(1.1);
-    cursor: pointer;
+/* VIDEOS */
+.videos {
+
 }
