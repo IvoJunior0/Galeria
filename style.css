@@ -23,6 +23,7 @@ body::before{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    background-attachment: scroll;
     width: 100%;
     height: 100%;
     -webkit-filter: blur(5px);
@@ -57,27 +58,39 @@ body::before{
     align-items: center;
     flex-direction: column;
     font-family: "Sawarabi Mincho", serif;
-    color: white
+    color: white;
 }
 
 .title {
     display: flex;
     align-items: center;
     gap: 30px;
-    padding: 40px 0;
+    padding: 30px 0;
 }
 
-@media screen and (max-width: 794px) {
+@media screen and (max-width: 425px) {
     .title{
         flex-direction: column-reverse;
     }
     .title-text {
+        width: 280px;
         padding: 17px;
+        text-align: center;
+        align-items: center;
+    }
+    .title-text h1 {
+        width: 200px;
     }
     .subtitle {
         display: flex;
         align-items: center;
         flex-direction: column;
+    }
+    .kurapika-title{
+        padding-top: 30px;
+    }
+    .media {
+        width: 200px;
     }
 }
 
@@ -87,17 +100,21 @@ body::before{
 }
 
 .title-text{
-    width: 500px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
 }
 
 .title-text h1 {
-    font-size: 70px;
+    font-size: 50px; 
 }
 
 .media {
-    margin: 0 auto;
     max-width: 1180px;
-    padding: 10px 30px; 
+    padding: 10px 30px;
+    margin: auto;
 }
 
 .subtitle {
@@ -123,7 +140,7 @@ body::before{
     transition: .15s linear;
     justify-self: center;
     align-self: center;
-    width: 350px;
+    width: 300px;
     height: 250px;
     object-fit: cover;
 }
@@ -170,9 +187,4 @@ body::before{
     .box:nth-child(n){
         transition-delay: 0.2s;
     }
-}
-
-/* VIDEOS */
-.videos {
-
 }
